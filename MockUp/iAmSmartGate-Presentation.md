@@ -20,55 +20,41 @@ The **iAmSmart Public Access Gate System (PoC)** is a functional demonstration o
 
 ```mermaid
 graph TB
-    subgraph layer1["Client Layer"]
-        direction LR
-        User[👤 User Mobile Device<br/>HTML5 Web App]
-        Gate[📱 Gate Tablet<br/>HTML5 QR Scanner]
+    subgraph "Visitors"
+        User[🙍🏻‍♂️ User Mobile Device<br/>HTML5 Web App]
     end
     
-    subgraph layer2["Application Layer - GCP Ubuntu VM"]
-        direction LR
-        API[🔌 REST API Server<br/>Flask/Python PoC]
-        Console[🖥️ Admin Console PoC<br/>Approval/Revocation/Monitoring]
+    subgraph "Access Gate"
+        Gate[🚧 Gate Tablet<br/>HTML5 QR Scanner]
     end
     
-    subgraph layer3["Business Logic Layer"]
-        direction LR
-        HSM[🔐 Dummy HSM PoC<br/>Server-Side Key Store]
+    subgraph "Quantum-Safe Backend"
+        API[🔗 User-Gate API Server<br/>Flask (PoC)]
+        Control[👮 Access Control Database<br/>Users/Gates/Passes/Audit <br/>SQLite (PoC)]
+        HSM[🔐 Quantum-Safe HSM<br/>Server-Side Key Store (Dummy)]
+        Console[🖥️ Admin Console<br/>Approval/Revocation/Monitoring]
         Jobs[⏰ Background Jobs<br/>Pass Expiration/Cleanup]
     end
     
-    subgraph layer4["Data Layer"]
-        DB[(💾 SQLite Database PoC<br/>Users/Gates/Passes/Audit)]
+    subgraph "External Integrations"
+        iAmSmart[🆔 iAM Smart API<br/>Auth Stub (Dummy)]
     end
     
-    subgraph layer5["External Integration Layer"]
-        iAmSmart[🆔 iAmSmart API<br/>Dummy Auth Stub PoC]
-    end
-    
-    User -->|HTTPS TLS 1.3| API
-    Gate -->|HTTPS TLS 1.3| API
-    Console --> API
+    User -->|HTTPS TLS| API
+    Gate -->|Quantum-Safe SSL| API
+    API --> Control
     API --> HSM
     API --> iAmSmart
-    Jobs --> DB
-    HSM --> DB
-    API --> DB
+    Console --> API
+    Jobs --> Control
     
     style User fill:#e1f5ff
     style Gate fill:#fff4e1
     style API fill:#e8f5e9
-    style Console fill:#fff9c4
     style HSM fill:#fce4ec
-    style Jobs fill:#e8f5e9
     style DB fill:#f3e5f5
+    style Console fill:#fff9c4
     style iAmSmart fill:#e0e0e0
-    
-    style layer1 fill:#f0f8ff,stroke:#4682b4,stroke-width:2px
-    style layer2 fill:#f0fff0,stroke:#228b22,stroke-width:2px
-    style layer3 fill:#fff5f5,stroke:#dc143c,stroke-width:2px
-    style layer4 fill:#f5f0ff,stroke:#8b008b,stroke-width:2px
-    style layer5 fill:#f5f5f5,stroke:#696969,stroke-width:2px
 ```
 
 ```mermaid
@@ -547,4 +533,5 @@ This functional mock-up serves as a proof-of-concept for broader deployment acro
 
 Real Matter Technology Limited  
 Copyright 2025-2026
+
 
