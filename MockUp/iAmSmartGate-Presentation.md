@@ -29,15 +29,15 @@ graph TB
     end
     
     subgraph "Quantum-Safe Backend"
-        API[🔗 User-Gate API Server<br/>Flask (PoC)]
-        Control[👮 Access Control Database<br/>Users/Gates/Passes/Audit <br/>SQLite (PoC)]
-        HSM[🔐 Quantum-Safe HSM<br/>Server-Side Key Store (Dummy)]
+        API[🔗 User-Gate API Server<br/>Flask-PoC]
+        Control[(👮 Access Control Database<br/>Users/Gates/Passes/Audit <br/>SQLite-PoC)]
+        HSM[(🔐 Quantum-Safe HSM<br/>Server-Side Key Store-Dummy)]
         Console[🖥️ Admin Console<br/>Approval/Revocation/Monitoring]
         Jobs[⏰ Background Jobs<br/>Pass Expiration/Cleanup]
     end
     
     subgraph "External Integrations"
-        iAmSmart[🆔 iAM Smart API<br/>Auth Stub (Dummy)]
+        iAmSmart[🆔 iAM Smart API<br/>Auth Stub-Dummy]
     end
     
     User -->|HTTPS TLS| API
@@ -533,5 +533,6 @@ This functional mock-up serves as a proof-of-concept for broader deployment acro
 
 Real Matter Technology Limited  
 Copyright 2025-2026
+
 
 
