@@ -1,3 +1,5 @@
+![iAmSmartGate](iAmSmartGate.png)
+
 # iAmSmartGate System (PoC)
 ## Secure Public Access Control with Hong Kong iAM Smart eID
 
@@ -526,6 +528,7 @@ This functional mock-up serves as a proof-of-concept for broader deployment acro
 
 Real Matter Technology Limited  
 Copyright 2025-2026
+
 
 
 
