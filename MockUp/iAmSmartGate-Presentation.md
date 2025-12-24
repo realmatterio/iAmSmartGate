@@ -256,7 +256,7 @@ sequenceDiagram
     participant DB as Database
     participant Gate as Gate Tablet
     
-    rect rgb(255, 230, 230)
+    rect rgb(55, 30, 30)
         Note over Admin,DB: Revocation Scenario
         Admin->>Console: Search Active Passes
         Console->>API: GET /admin/active-passes
@@ -495,6 +495,7 @@ This functional mock-up serves as a proof-of-concept for broader deployment acro
 
 Real Matter Technology Limited  
 Copyright 2025-2026
+
 
 
 
