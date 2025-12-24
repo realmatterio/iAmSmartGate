@@ -1,5 +1,5 @@
 # iAmSmartGate System (PoC)
-## Secure Public Access Control with Hong Kong iAmSmart eID
+## Secure Public Access Control with Hong Kong iAM Smart eID
 
 ---
 
