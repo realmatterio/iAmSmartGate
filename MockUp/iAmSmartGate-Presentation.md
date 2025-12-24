@@ -29,7 +29,7 @@ graph TB
     end
     
     subgraph "Quantum-Safe Backend"
-        API[🔗 User-Gate API Server<br/>Flask-PoC]
+        API(🔗 User-Gate API Server<br/>Flask-PoC)
         Control[(👮 Access Control Database<br/>Users/Gates/Passes/Audit <br/>SQLite-PoC)]
         HSM[(🔐 Quantum-Safe HSM<br/>Server-Side Key Store-Dummy)]
         Console[🖥️ Admin Console<br/>Approval/Revocation/Monitoring]
@@ -37,7 +37,7 @@ graph TB
     end
     
     subgraph "External Integrations"
-        iAmSmart[🆔 iAM Smart API<br/>Auth Stub-Dummy]
+        iAmSmart(🆔 iAM Smart API<br/>Auth Stub-Dummy)
     end
     
     User -->|HTTPS TLS| API
@@ -48,52 +48,14 @@ graph TB
     Console --> API
     Jobs --> Control
     
-    style User fill:#e1f5ff
-    style Gate fill:#fff4e1
-    style API fill:#e8f5e9
-    style HSM fill:#fce4ec
-    style DB fill:#f3e5f5
-    style Console fill:#fff9c4
-    style iAmSmart fill:#e0e0e0
-```
-
-```mermaid
-graph TB
-    subgraph "User Domain"
-        User[👤 User Mobile Device<br/>HTML5 Web App]
-    end
-    
-    subgraph "Access Point Domain"
-        Gate[📱 Gate Tablet<br/>HTML5 QR Scanner]
-    end
-    
-    subgraph "Backend Domain - GCP Ubuntu VM"
-        API[🔌 REST API Server<br/>Flask/Python PoC]
-        HSM[🔐 Dummy HSM PoC<br/>Server-Side Key Store]
-        DB[(💾 SQLite Database PoC<br/>Users/Gates/Passes/Audit)]
-        Console[🖥️ Admin Console PoC<br/>Approval/Revocation/Monitoring]
-        Jobs[⏰ Background Jobs<br/>Pass Expiration/Cleanup]
-    end
-    
-    subgraph "External Integrations"
-        iAmSmart[🆔 iAmSmart API<br/>Dummy Auth Stub PoC]
-    end
-    
-    User -->|HTTPS TLS 1.3| API
-    Gate -->|HTTPS TLS 1.3| API
-    API --> HSM
-    API --> DB
-    API --> iAmSmart
-    Console --> API
-    Jobs --> DB
-    
-    style User fill:#e1f5ff
-    style Gate fill:#fff4e1
-    style API fill:#e8f5e9
-    style HSM fill:#fce4ec
-    style DB fill:#f3e5f5
-    style Console fill:#fff9c4
-    style iAmSmart fill:#e0e0e0
+    style User stroke:#e1f5ff,fill:#281E5D 
+    style Gate stroke:#fff4e1,fill:#0A1172
+    style API stroke:#e8f5e9
+    style HSM stroke:#fce4ec,stroke-width:5px,fill:#281E5D
+    style Control stroke:#f3e5f5,stroke-width:5px,fill:#0A1172
+    style Console stroke:#fff9c4
+    style iAmSmart stroke:#e0e0e0
+    style Jobs color:#6D616F
 ```
 
 ### Architecture Highlights
@@ -533,6 +495,7 @@ This functional mock-up serves as a proof-of-concept for broader deployment acro
 
 Real Matter Technology Limited  
 Copyright 2025-2026
+
 
 
 
