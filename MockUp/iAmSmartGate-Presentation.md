@@ -526,12 +526,15 @@ The **iAmSmart Public Access Gate System** demonstrates a modern, secure approac
 ✅ **Comprehensive Auditing**: Full traceability of all access attempts for compliance  
 ✅ **Scalable Architecture**: Cloud-based deployment ready for production expansion with quantum-safe OpenSSL  
 
+![QRCode](QRCode.jpg)
+
 This functional mock-up serves as a proof-of-concept for broader deployment across public facilities, educational institutions, and enterprise environments requiring secure, auditable, quantum-resistant access control that enhances rather than replaces existing infrastructure.
 
 ---
 
 Real Matter Technology Limited  
 Copyright 2025-2026
+
 
 
 
