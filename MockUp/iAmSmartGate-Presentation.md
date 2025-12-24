@@ -28,7 +28,7 @@ graph TB
         Gate[🚧 Gate Tablet<br/>HTML5 QR Scanner]
     end
     
-    subgraph "Quantum-Safe Backend"
+    subgraph "Quantum-Safe Backend (Server)"
         API(🔗 User-Gate API Server<br/>Flask-PoC)
         Control[(👮 Access Control Database<br/>Users/Gates/Passes/Audit <br/>SQLite-PoC)]
         HSM[(🔐 Quantum-Safe HSM<br/>Server-Side Key Store-Dummy)]
@@ -36,8 +36,9 @@ graph TB
         Jobs[⏰ Background Jobs<br/>Pass Expiration/Cleanup]
     end
     
-    subgraph "External Integrations"
+    subgraph "External Integrations (iAM Smart)"
         iAmSmart(🆔 iAM Smart API<br/>Auth Stub-Dummy)
+        Mainnet((🌐 Facility Management]))
     end
     
     User -->|HTTPS TLS| API
@@ -45,16 +46,18 @@ graph TB
     API --> Control
     API --> HSM
     API --> iAmSmart
+    API --> Mainnet
     Console --> API
     Jobs --> Control
     
     style User stroke:#e1f5ff,fill:#281E5D 
     style Gate stroke:#fff4e1,fill:#0A1172
     style API stroke:#e8f5e9
-    style HSM stroke:#fce4ec,stroke-width:5px,fill:#281E5D
-    style Control stroke:#f3e5f5,stroke-width:5px,fill:#0A1172
+    style HSM stroke:#fce4ec,stroke-width:4px,fill:#281E5D
+    style Control stroke:#f3e5f5,stroke-width:4px,fill:#0A1172
     style Console stroke:#fff9c4
     style iAmSmart stroke:#e0e0e0
+    style Mainnet stroke:#6D616F; color:#6D616F
     style Jobs color:#6D616F
 ```
 
