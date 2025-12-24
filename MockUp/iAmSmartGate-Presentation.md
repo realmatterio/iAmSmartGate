@@ -270,7 +270,7 @@ sequenceDiagram
         API-->>Console: Revocation Confirmed
     end
     
-    rect rgb(255, 245, 230)
+    rect rgb(55, 45, 30)
         Note over Admin,Gate: System Pause Scenario
         Admin->>Console: Click "Pause All Access"
         Console->>API: POST /admin/pause (scope: all)
@@ -287,7 +287,7 @@ sequenceDiagram
         Gate->>Gate: Display "Access Temporarily Disabled"
     end
     
-    rect rgb(230, 255, 230)
+    rect rgb(30, 55, 30)
         Note over Admin,Gate: Resume Operations
         Admin->>Console: Click "Resume Access"
         Console->>API: POST /admin/resume
@@ -495,6 +495,7 @@ This functional mock-up serves as a proof-of-concept for broader deployment acro
 
 Real Matter Technology Limited  
 Copyright 2025-2026
+
 
 
 
