@@ -69,7 +69,7 @@ graph TB
 - **Add-On Architecture**: Designed to complement existing closed-loop access control systems without requiring infrastructure changes
 - **Web-Based Clients**: Both user wallet and gate reader run as web apps in standard browsers for maximum accessibility
 - **Centralized Backend**: Python Flask PoC server on permissioned platform handles all business logic
-- **Quantum-Safe Ready**: Extensible architecture with quantum-safe ICC-OpenSSL channel support and ICCH-HSM PQC key management framework
+- **Quantum-Safe Ready**: Extensible architecture with quantum-safe ICC-OpenSSL channel support and ICC-HSM PQC key management framework
 - **Server-Side Key Management (PoC)**: Private keys stored securely on backend with HSM integration; supports quantum-resistant algorithms (e.g., Kyber/ML-KEM, Dilithium/ML-DSA, or other NIST PQC methods).)
 - **Hybrid Security Model**: Current TLS 1.3 with digital signatures; ready for quantum-safe upgrade path
 - **Government eID Integration**: Facilitates iAM Smart authentication for government-grade identity verification
