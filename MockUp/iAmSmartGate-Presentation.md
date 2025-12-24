@@ -5,7 +5,7 @@
 
 ## Executive Summary
 
-The **iAmSmart Public Access Gate System (PoC)** is a functional demonstration of secure, digital access control for public sites using Hong Kong's iAmSmart electronic identity framework. The solution provides users with a mobile-based digital wallet for requesting and presenting time-limited, single-use access passes via dynamically generated QR codes, while enabling facility managers to control and audit access in real-time.
+The **iAM Smart Public Access Gate System (iAmSmartGate PoC)** is a functional demonstration of secure, digital access control for public sites using Hong Kong's iAM Smart electronic identity framework. The solution provides users with a mobile-based digital wallet for requesting and presenting time-limited, single-use access passes via dynamically generated QR codes, while enabling facility managers to control and audit access in real-time.
 
 ### Key Features
 - **Easy Public Access with Highly Secure Closed-Loop Control**: Seamless visitor experience with multi-layer security verification ensuring controlled access
