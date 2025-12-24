@@ -20,11 +20,11 @@ The **iAmSmart Public Access Gate System (PoC)** is a functional demonstration o
 
 ```mermaid
 graph TB
-    subgraph "Visitors"
+    subgraph "Visitors (Users)"
         User[🙍🏻‍♂️ User Mobile Device<br/>HTML5 Web App]
     end
     
-    subgraph "Access Gate"
+    subgraph "Access Gate (Guards)"
         Gate[🚧 Gate Tablet<br/>HTML5 QR Scanner]
     end
     
@@ -81,7 +81,7 @@ sequenceDiagram
     participant iAm as iAmSmart Stub (PoC)
     participant DB as Database
     
-    User->>App: Open Wallet App
+    User->>App: 📱 Open Wallet App
     App->>User: Show Login Form
     User->>App: Enter iAmSmart ID & Password
     App->>API: POST /login (credentials)
@@ -93,13 +93,13 @@ sequenceDiagram
     API-->>App: JWT Token + Public Key
     App->>User: Show Wallet Dashboard
     
-    User->>App: Click "Apply for Pass"
+    User->>App: 📲 Click "Apply for Pass"
     App->>User: Show Pass Application Form
     User->>App: Fill Site, Purpose, Date-Time
     App->>API: POST /apply-pass (pass details)
     API->>DB: INSERT Pass (status: In Process)
     API-->>App: Application ID + Status
-    App->>User: Show "Application Submitted"
+    App->>User: 📝 Show "Application Submitted"
 ```
 
 ### 2. Admin Approval Flow
@@ -124,11 +124,11 @@ sequenceDiagram
     API->>DB: INSERT AuditLog (approval event)
     API-->>Console: Approval Confirmed
     
-    Note over App: User checks status
+    Note over App: 🔍 User checks status
     App->>API: GET /pass-status
     API->>DB: SELECT Pass WHERE user_id
     API-->>App: Pass Status: APPROVED
-    App->>App: Show in Green (Active)
+    App->>App: ✅ Show in Green (Active)
 ```
 
 ### 3. QR Code Generation & Presentation Flow
@@ -143,7 +143,7 @@ sequenceDiagram
     
     User->>App: Select Approved Pass
     App->>User: Show Pass Details
-    User->>App: Click "Generate QR Code"
+    User->>App: ⛶ Click "Generate QR Code"
     
     App->>API: POST /get-qr (pass_id)
     API->>DB: SELECT Pass WHERE pass_id
@@ -158,7 +158,7 @@ sequenceDiagram
         API-->>App: Return Signed QR JSON
         
         App->>App: Generate QR Image from JSON
-        App->>User: Display QR Full-Screen
+        App->>User: 𖣯 Display QR Full-Screen
         App->>App: Start 1-Minute Countdown
         
         loop Every Second
@@ -166,11 +166,11 @@ sequenceDiagram
         end
         
         alt Timer Expires
-            App->>User: QR Expired - Request New Code
+            App->>User: ⛆ QR Expired - Request New Code
         end
     else Pass Invalid/Used/Revoked
         API-->>App: Error: Pass Not Available
-        App->>User: Show Error Message
+        App->>User: 🚫 Show Error Message
     end
 ```
 
@@ -185,7 +185,7 @@ sequenceDiagram
     participant HSM as Dummy HSM (PoC)
     actor User
     
-    Guard->>Gate: Open Scanner App
+    Guard->>Gate: 🕵🏻 Open Scanner App
     Gate->>Gate: Login (Tablet ID + GPS)
     Gate->>API: POST /gate-login (tablet_id, gps)
     API->>DB: Verify Gate Credentials
@@ -217,32 +217,32 @@ sequenceDiagram
         API->>DB: INSERT AuditLog (scan success)
         API->>DB: COMMIT
         API-->>Gate: ✅ PASS
-        Gate->>User: Display "ACCESS GRANTED"
+        Gate->>User: 🟢 Display "ACCESS GRANTED"
         User->>Guard: Enter Site
         
     else Pass Already Used
         API->>DB: ROLLBACK
         API->>DB: INSERT AuditLog (scan failed - already used)
         API-->>Gate: ❌ NO PASS (Already Used)
-        Gate->>User: Display "ACCESS DENIED - Used"
+        Gate->>User: 🚫 Display "ACCESS DENIED - Used"
         
     else Pass Expired (>1 min)
         API->>DB: ROLLBACK
         API->>DB: INSERT AuditLog (scan failed - expired)
         API-->>Gate: ❌ NO PASS (Expired)
-        Gate->>User: Display "ACCESS DENIED - Expired"
+        Gate->>User: 🚫 Display "ACCESS DENIED - Expired"
         
     else Pass Revoked
         API->>DB: ROLLBACK
         API->>DB: INSERT AuditLog (scan failed - revoked)
         API-->>Gate: ❌ REVOKED
-        Gate->>User: Display "ACCESS DENIED - Revoked"
+        Gate->>User: 🚫 Display "ACCESS DENIED - Revoked"
         
     else Signature Invalid
         API->>DB: ROLLBACK
         API->>DB: INSERT AuditLog (scan failed - invalid signature)
         API-->>Gate: ❌ NO PASS (Invalid)
-        Gate->>User: Display "ACCESS DENIED - Invalid QR"
+        Gate->>User: 🚫 Display "ACCESS DENIED - Invalid QR"
     end
 ```
 
@@ -495,9 +495,4 @@ This functional mock-up serves as a proof-of-concept for broader deployment acro
 
 Real Matter Technology Limited  
 Copyright 2025-2026
-
-
-
-
-
 
