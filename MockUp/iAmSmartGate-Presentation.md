@@ -8,8 +8,8 @@
 The **iAM Smart Public Access Gate System (iAmSmartGate PoC)** is a functional demonstration of secure, digital access control for public sites using Hong Kong's iAM Smart electronic identity framework. The solution provides users with a mobile-based digital wallet for requesting and presenting time-limited, single-use access passes via dynamically generated QR codes, while enabling facility managers to control and audit access in real-time.
 
 ### Key Features
-- **Easy Public Access with Highly Secure Closed-Loop Control**: Seamless visitor experience with multi-layer security verification ensuring controlled access
-- **Add-On to Existing Systems**: Works alongside any existing closed-loop access control infrastructure without requiring modifications—enhances rather than replaces
+- **Easy Public Access with Highly Secure Closed-Loop Control**: Seamless public visitor experience with multi-layer security verification ensuring controlled access
+- **Add-On to Existing Systems**: Works alongside any existing in-house access control infrastructure without requiring modifications—enhances rather than replaces
 - **User-Friendly for All Stakeholders**: Intuitive mobile wallet for public visitors; simple approval workflow for access control guards and administrators
 - **Government-Grade Authentication**: Facilitates Hong Kong iAM Smart government identity verification with official eID integration
 - **Quantum-Safe Security**: Digital signatures on access passes and QR codes stored in secure wallet architecture; extensible to post-quantum cryptography (PQC) algorithms
