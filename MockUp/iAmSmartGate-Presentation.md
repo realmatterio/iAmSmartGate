@@ -5,17 +5,44 @@
 
 ## Executive Summary
 
-The **iAM Smart Public Access Gate System (iAmSmartGate PoC)** is a functional demonstration of secure, digital access control for public sites using Hong Kong's iAM Smart electronic identity framework. The solution provides users with a mobile-based digital wallet for requesting and presenting time-limited, single-use access passes via dynamically generated QR codes, while enabling facility managers to control and audit access in real-time.
+The **iAM Smart Public Access Gate System (iAmSmartGate)** is a functional demonstration of secure, digital access control for public sites using Hong Kong's iAM Smart electronic identity framework. The solution provides public users with a mobile-based digital wallet for requesting and presenting time-limited, single-use access passes to permissioned sites via dynamically generated QR codes, while enabling facility managers to control and audit access in real-time.
 
 ### Key Features
-- **Easy Public Access with Highly Secure Closed-Loop Control**: Seamless public visitor experience with multi-layer security verification ensuring controlled access
-- **Add-On to Existing Systems**: Works alongside any existing in-house access control infrastructure without requiring modifications—enhances rather than replaces
+- **Easy Public Access with Highly Secure Closed-Loop Control**: Seamless public visitor experience with multi-layer security verification to ensure controlled access
 - **User-Friendly for All Stakeholders**: Intuitive mobile wallet for public visitors; simple approval workflow for access control guards and administrators
-- **Government-Grade Authentication**: Facilitates Hong Kong iAM Smart government identity verification with official eID integration
-- **Quantum-Safe Security**: Digital signatures on access passes and QR codes stored in secure wallet architecture; extensible to post-quantum cryptography (PQC) algorithms
-- **Real-Time Access Control**: Gate readers validate passes instantly with single-use enforcement and atomic transaction guarantees
+- **Government-Grade Authentication**: Leverages Hong Kong's iAM Smart government identity verification with official eID integration
+- **Add-On to Existing Systems**: Works alongside any existing closed-loop access control infrastructure without requiring modifications—it enhances rather than replaces
+
+### Closed-Loop Security
+
+- **Quantum-Safe Security**: Digital signatures on access passes and QR codes stored in a secure wallet architecture; extensible to post-quantum cryptography (PQC) algorithms
+- **Real-Time Access Control**: Gate readers validate passes instantly with signature verification, single-use enforcement and closed-loop transaction guarantees
 - **Administrative Oversight**: Console for manual approvals, revocations, and system-wide pause controls
 - **Comprehensive Audit Trail**: Full logging of all access attempts and administrative actions for compliance and forensics
+
+---
+
+## Use Cases
+
+### Existing Access Control Enhancement (Add-On Deployment)
+- **Scenario**: A corporate campus with a legacy card-based access control system needs public visitor management
+- **Benefits**: iAmSmartGate adds a visitor pass layer without replacing the existing employee badge system; dual-mode gates support both
+
+### Campus Access Control
+- **Scenario**: A university manages visitor access to multiple buildings
+- **Benefits**: Digital passes eliminate e-paper form submission, enable real-time approval, and provide an audit trail for compliance and iAM Smart public verification
+
+### Event Management
+- **Scenario**: A conference with time-slotted sessions
+- **Benefits**: Dynamic QR codes prevent ticket sharing and automatically expire after the timeslot; quantum-safe signatures prevent forgery
+
+### Government Facilities
+- **Scenario**: Public services requiring appointment-based access
+- **Benefits**: Integration with the eID system provides secure identity verification and controlled capacity management
+
+### Construction Sites
+- **Scenario**: Temporary worker access requiring safety compliance
+- **Benefits**: Instant revocation for terminated workers, site-specific access control, and safety briefing verification
 
 ---
 
@@ -67,13 +94,13 @@ graph TB
 ### Architecture Highlights
 
 - **Add-On Architecture**: Designed to complement existing closed-loop access control systems without requiring infrastructure changes
-- **Web-Based Clients**: Both user wallet and gate reader run as web apps in standard browsers for maximum accessibility
-- **Centralized Backend**: Python Flask PoC server on permissioned platform handles all business logic
-- **Quantum-Safe Ready**: Extensible architecture with quantum-safe ICC-OpenSSL channel support and ICC-HSM PQC key management framework
-- **Server-Side Key Management (PoC)**: Private keys stored securely on backend with HSM integration; supports quantum-resistant algorithms (e.g., Kyber/ML-KEM, Dilithium/ML-DSA, or other NIST PQC methods).)
+- **Web-Based Clients**: Both user wallet and gate reader run as HTML5/JavaScript apps in standard browsers for maximum accessibility
+- **Centralized Backend (PoC)**: Python Flask server on Google Cloud Platform handles all business logic
+- **Quantum-Safe Ready**: Extensible architecture with quantum-safe OpenSSL channel support and PQC key management framework
+- **Server-Side Key Management (PoC)**: Private keys stored securely on backend with HSM integration; supports quantum-resistant algorithms (Kyber, Dilithium)
 - **Hybrid Security Model**: Current TLS 1.3 with digital signatures; ready for quantum-safe upgrade path
 - **Government eID Integration**: Facilitates iAM Smart authentication for government-grade identity verification
-- **Demo Limitations**: Dummy iAM Smart integration (PoC), simplified GPS validation (PoC), extented quantum-safe features (PoC)
+- **Demo Limitations**: Dummy iAmSmart integration (PoC), simplified GPS validation (PoC), quantum-safe features in development
 
 ---
 
@@ -213,8 +240,9 @@ sequenceDiagram
     API->>DB: Get User Public Key
     DB-->>API: Public Key
     
-    API->>HSM: Verify Signature (payload, signature, public_key)
-    HSM-->>API: Signature Valid ✓
+    API->>API: Verify Signature (payload, signature, public_key)
+    
+    Note over API: Signature verification uses<br/>cryptography library (not HSM)
     
     API->>DB: BEGIN TRANSACTION
     API->>DB: SELECT Pass FOR UPDATE WHERE pass_id
@@ -476,29 +504,6 @@ graph LR
    - **Integration with Existing Systems**: API adapters for common access control platforms (HID, Honeywell, Lenel, AMAG)
    - **Interoperability**: Support for OSDP, Wiegand, and PACS standards for seamless add-on deployment
 
----
-
-## Use Cases
-
-### Existing Access Control Enhancement (Add-On Deployment)
-- **Scenario**: Corporate campus with legacy card-based access control needs public visitor management
-- **Benefits**: iAmSmartGate adds visitor pass layer without replacing existing employee badge system; dual-mode gates support both
-
-### Campus Access Control
-- **Scenario**: University manages visitor access to multiple buildings
-- **Benefits**: Digital pass eliminates paper forms, real-time approval, audit trail for compliance, iAM Smart student verification
-
-### Event Management
-- **Scenario**: Conference with time-slotted sessions
-- **Benefits**: Dynamic QR codes prevent ticket sharing, automatic expiration after timeslot, quantum-safe signatures prevent forgery
-
-### Government Facilities
-- **Scenario**: Public services requiring appointment-based access
-- **Benefits**: Integration with eID system, secure identity verification, controlled capacity
-
-### Construction Sites
-- **Scenario**: Temporary worker access with safety compliance
-- **Benefits**: Revocation for terminated workers, site-specific access control, safety briefing verification
 
 ---
 
