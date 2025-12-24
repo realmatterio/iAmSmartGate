@@ -38,7 +38,7 @@ graph TB
     
     subgraph "External Integrations (iAM Smart)"
         iAmSmart(🆔 iAM Smart API<br/>Auth Stub-Dummy)
-        Mainnet((🌐 Facility Management]))
+        Mainnet((🌐 Facility Management))
     end
     
     User -->|HTTPS TLS| API
@@ -498,4 +498,5 @@ This functional mock-up serves as a proof-of-concept for broader deployment acro
 
 Real Matter Technology Limited  
 Copyright 2025-2026
+
 
