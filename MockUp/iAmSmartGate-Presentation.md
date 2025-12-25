@@ -28,7 +28,7 @@ The **iAM Smart Public Access Gate System (iAmSmartGate)** is a functional demon
 
 ## Use Cases
 
-![UseCases](./Resources/UseCasesIroncap.jpg)
+![UseCases](./Resources/UseCases.jpg)
 
 ### Existing Access Control Enhancement (Add-On Deployment)
 - **Scenario**: A corporate campus with a legacy card-based access control system needs public visitor management
@@ -526,7 +526,7 @@ The **iAmSmart Public Access Gate System** demonstrates a modern, secure approac
 ✅ **Comprehensive Auditing**: Full traceability of all access attempts for compliance  
 ✅ **Scalable Architecture**: Cloud-based deployment ready for production expansion with quantum-safe OpenSSL  
 
-![QRCode](QRCode.jpg)
+![QRCode](./Resources/QRCodeIconcap.jpg)
 
 This functional mock-up serves as a proof-of-concept for broader deployment across public facilities, educational institutions, and enterprise environments requiring secure, auditable, quantum-resistant access control that enhances rather than replaces existing infrastructure.
 
@@ -534,6 +534,7 @@ This functional mock-up serves as a proof-of-concept for broader deployment acro
 
 Real Matter Technology Limited  
 Copyright 2025-2026
+
 
 
 
