@@ -12,7 +12,7 @@ The **iAM Smart Public Access Gate System (iAmSmartGate)** is a functional demon
 ![AccessControl](./Resources/AccessControlIroncap.jpg)
 
 ### Key Features
-- **Easy Public Access with Highly Secure Closed-Loop Control**: Seamless public visitor experience with multi-layer security verification to ensure controlled access
+- **Easy Public Access with Quantum-Secure Closed-Loop Control**: Seamless public visitor experience with multi-layer security verification to ensure controlled access
 - **User-Friendly for All Stakeholders**: Intuitive mobile wallet for public visitors; simple approval workflow for access control guards and administrators
 - **Government-Grade Authentication**: Leverages Hong Kong's iAM Smart government identity verification with official eID integration
 - **Add-On to Existing Systems**: Works alongside any existing closed-loop access control infrastructure without requiring modifications—it enhances rather than replaces
