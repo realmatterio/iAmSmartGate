@@ -1,7 +1,7 @@
 ![iAmSmartGate](iAmSmartGate.png)
 
 # iAmSmartGate System (PoC)
-## Secure Public Access Control with Hong Kong iAM Smart eID
+## Quantum-Secure Public Access Control with Hong Kong iAM Smart eID
 
 ---
 
