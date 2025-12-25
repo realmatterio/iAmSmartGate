@@ -9,7 +9,7 @@
 
 The **iAM Smart Public Access Gate System (iAmSmartGate)** is a functional demonstration of secure, digital access control for public sites using Hong Kong's iAM Smart electronic identity framework. The solution provides public users with a mobile-based digital wallet for requesting and presenting time-limited, single-use access passes to permissioned sites via dynamically generated QR codes, while enabling facility managers to control and audit access in real-time.
 
-![AccessControl](AccessControl.jpg)
+![AccessControl](./Resources/AccessControlIroncap.jpg)
 
 ### Key Features
 - **Easy Public Access with Highly Secure Closed-Loop Control**: Seamless public visitor experience with multi-layer security verification to ensure controlled access
@@ -28,7 +28,7 @@ The **iAM Smart Public Access Gate System (iAmSmartGate)** is a functional demon
 
 ## Use Cases
 
-![UseCases](UseCases.jpg)
+![UseCases](./Resources/UseCasesIroncap.jpg)
 
 ### Existing Access Control Enhancement (Add-On Deployment)
 - **Scenario**: A corporate campus with a legacy card-based access control system needs public visitor management
@@ -534,6 +534,7 @@ This functional mock-up serves as a proof-of-concept for broader deployment acro
 
 Real Matter Technology Limited  
 Copyright 2025-2026
+
 
 
 
