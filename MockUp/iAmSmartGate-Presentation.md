@@ -578,8 +578,7 @@ Monitoring:
 
 1. **Phase 1: Security Hardening & Quantum-Safe Deployment**
    - Integrate real iAM Smart API with OAuth 2.0 for government eID verification
-   - Deploy quantum-safe OpenSSL with OQS provider (hybrid classical+PQC cipher suites)
-   - Implement PQC algorithms: Kyber for key exchange, Dilithium for digital signatures
+   - Deploy quantum-safe OpenSSL with OQS provider (hybrid classical+PQC cipher suites)
    - Migrate to hardware security module (Crypto4A HSM) with IronCAP PQC support for key management
    - Add multi-factor authentication (MFA) with iAM Smart integration
    - Deploy intrusion detection system (IDS) and security information event management (SIEM)
