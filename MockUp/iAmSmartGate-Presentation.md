@@ -539,11 +539,12 @@ This functional mock-up serves as a proof-of-concept for broader deployment acro
 
 ---
 
-IronCAP, ICC OpenSSL and ICCHSM are registered trademarks of 01 Quantum Laboratory Inc
+> IronCAP, ICC OpenSSL and ICCHSM are registered trademarks of 01 Quantum Laboratory Inc
 
 Real Matter Technology Limited  
-Copyright 2025-2026
+Copyright 2025-2026 <br>
 www.realmatter.io
+
 
 
 
