@@ -9,15 +9,18 @@
 
 The **iAM Smart Public Access Gate System (iAmSmartGate)** is a functional demonstration of secure, digital access control for public sites using Hong Kong's iAM Smart electronic identity framework. The solution provides public users with a mobile-based digital wallet for requesting and presenting quantum-safe, time-limited, single-use access passes to permissioned sites via dynamically generated QR codes, while enabling facility managers to control and audit access in real-time.
 
+### Key Features
+
 ![AccessControl](./Resources/AccessControlIroncap.jpg)
 
-### Key Features
 - **Easy Public Access with Quantum-Secure Closed-Loop Control**: Seamless public visitor experience with multi-layer security verification to ensure controlled access
 - **User-Friendly for All Stakeholders**: Intuitive mobile wallet for public visitors; simple approval workflow for access control guards and administrators
 - **Government-Grade Authentication**: Leverages Hong Kong's iAM Smart government identity verification with official eID integration
 - **Add-On to Existing Systems**: Works alongside any existing closed-loop access control infrastructure without requiring modifications—it enhances rather than replaces
 
 ### Closed-Loop Security
+
+![ClosedLoopSecurity](./Resources/ClosedLoopSecurity.jpg)
 
 - **Quantum-Safe Security**: Digital signatures on access passes and QR codes stored in a secure wallet architecture; extensible to post-quantum cryptography (PQC) algorithms
 - **Real-Time Access Control**: Gate readers validate passes instantly with signature verification, single-use enforcement and closed-loop transaction guarantees
@@ -99,6 +102,8 @@ graph TB
 
 ### Architecture Highlights
 
+![BlockDiagram](./Resources/BlockDiagram.jpg)
+
 - **Add-On Architecture**: Designed to complement existing closed-loop access control systems without requiring infrastructure changes
 - **Web-Based Clients**: Both user wallet and gate reader run as HTML5/JavaScript apps in standard browsers for maximum accessibility
 - **Centralized Backend (PoC)**: Python Flask server on Google Cloud Platform handles all business logic
@@ -111,6 +116,8 @@ graph TB
 ---
 
 ## Operation Flow
+
+![FlowDiagram](./Resources/FlowDiagram.jpg)
 
 ### 1. User Registration & Pass Application Flow
 
@@ -537,6 +544,7 @@ IronCAP, ICC OpenSSL and ICCHSM are registered trademarks of 01 Quantum Laborato
 Real Matter Technology Limited  
 www.realmatter.io
 Copyright 2025-2026
+
 
 
 
