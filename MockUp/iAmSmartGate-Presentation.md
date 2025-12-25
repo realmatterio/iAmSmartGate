@@ -106,7 +106,7 @@ graph TB
 - **Server-Side Key Management (PoC)**: Private keys stored securely on backend with HSM integration; supports quantum-resistant algorithms (Kyber, Dilithium)
 - **Hybrid Security Model**: Current TLS 1.3 with digital signatures; ready for quantum-safe upgrade path
 - **Government eID Integration**: Facilitates iAM Smart authentication for government-grade identity verification
-- **Demo Limitations**: Dummy iAmSmart integration (PoC), simplified GPS validation (PoC), quantum-safe features in development
+- **Demo Limitations**: Dummy iAmSmart integration (PoC), simplified GPS validation (PoC), cloud-based quantum-safe HSM (PoC)
 
 ---
 
@@ -472,7 +472,7 @@ graph LR
 | PoC Limitation | Impact | Production Mitigation |
 |------------|--------|----------------------|
 | **Dummy iAmSmart Integration (PoC)** | No real identity verification | Integrate with official iAM Smart API via OAuth 2.0 |
-| **Quantum-Safe Features in Development** | PQC algorithms not fully deployed in PoC | Enable liboqs-python and OpenSSL OQS provider; deploy Kyber/Dilithium |
+| **Quantum-Safe Features (PoC)** | Cloud-based Quantum-Safe HSM | Hardware-based Crypto4A HSM equipped with IconCAP quantum-safe modules |
 | **Browser GPS Validation (PoC)** | Location can be spoofed | Device attestation + hardware-backed location |
 | **Server-Side Key Storage (PoC)** | Centralized key management | Distribute keys or use true client wallets; maintain HSM for enterprise |
 | **SQLite Database (PoC)** | Not suitable for scale | Migrate to PostgreSQL/MySQL with replication |
@@ -537,6 +537,7 @@ IronCAP, ICC OpenSSL and ICCHSM are registered trademarks of 01 Quantum Laborato
 Real Matter Technology Limited  
 www.realmatter.io
 Copyright 2025-2026
+
 
 
 
