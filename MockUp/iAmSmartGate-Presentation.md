@@ -445,35 +445,117 @@ graph LR
 
 ## Technology Stack
 
-### Frontend (User & Gate Apps)
-- **Framework**: HTML5, CSS3, JavaScript ES6+ (PoC web-based) → React Native or Flutter (production native apps)
-- **UI Library**: Bootstrap 5 (responsive design, PoC) → Material-UI or Tailwind CSS (production)
-- **QR Generation**: qrcode.js library (PoC) → Native QR libraries with hardware acceleration (production)
-- **QR Scanning**: ZXing.js library (browser camera access, PoC) → Native camera APIs with ML Kit (production)
-- **APIs**: Fetch API for HTTPS communication (PoC) → Axios with retry logic and request queuing (production)
+<details open>
+<summary><strong>📱 Frontend (User & Gate Apps)</strong></summary>
 
-### Backend Server
-- **Language**: Python 3.10+
-- **Web Framework**: Flask with Flask-RESTful (PoC) → FastAPI or Django with Gunicorn/uWSGI (production)
-- **Database ORM**: SQLAlchemy
-- **Database**: SQLite (PoC) → PostgreSQL with read replicas and connection pooling (production)
-- **Cryptography**: Python `cryptography` library - RSA/ECDSA; **Quantum-Safe Extension**: IronCAP ICCHSM - Kyber, Dilithium, other NIST-approved PQC algorithms
-- **Quantum-Safe OpenSSL**: IronCAP ICC OpenSSL with hybrid classical+PQC cipher suites
-- **Background Jobs**: APScheduler (PoC) → Celery with Redis/RabbitMQ message broker (production)
-- **Admin Console**: Flask-Admin or Streamlit (PoC) → Custom React dashboard with role-based access control (production)
-- **iAM Smart Integration**: OAuth 2.0 client library for government eID authentication
-- **API Documentation**: Swagger/OpenAPI for automated API documentation
+```
+Framework:
+  PoC:        HTML5, CSS3, JavaScript ES6+ (web-based)
+  Production: React Native or Flutter (native apps)
 
-### Infrastructure
-- **Hosting**: GCP Compute Engine Ubuntu VM (PoC single instance) → GCP Kubernetes Engine (GKE) or Alibaba Cloud Container Service for Kubernetes (ACK) with auto-scaling and multi-region deployment (production)
-- **Web Server**: NGINX (reverse proxy) with OpenSSL 3.x + OQS provider for quantum-safe TLS
-- **Load Balancer**: Not required (PoC) → GCP Cloud Load Balancer or Alibaba Cloud Server Load Balancer (SLB) with health checks and SSL offloading (production)
-- **SSL/TLS**: Let's Encrypt certificates (auto-renewal); **Quantum-Safe Extension**: IronCAP ICC OpenSSL
-- **HSM**: IronCAP ICCHSM Cloud Platform (PoC) → Crypto4A HSM appliance (production) with ICCHSM support and FIPS 140-3 Level 3 compliance, deployable on GCP or Alibaba Cloud infrastructure
-- **Caching**: Not implemented (PoC) → Redis Cluster (GCP Memorystore or Alibaba Cloud ApsaraDB for Redis) for session management and API response caching (production)
-- **CDN**: Not implemented (PoC) → Cloudflare, GCP Cloud CDN, or Alibaba Cloud CDN for static asset delivery (production)
-- **Monitoring**: Basic GCP monitoring + application logging (PoC) → Prometheus + Grafana for metrics, ELK Stack (Elasticsearch, Logstash, Kibana) for centralized logging, Sentry for error tracking; deployable on GCP Cloud Monitoring or Alibaba Cloud ARMS (Application Real-Time Monitoring Service) (production)
+UI Library:
+  PoC:        Bootstrap 5 (responsive design)
+  Production: Material-UI or Tailwind CSS
 
+QR Generation:
+  PoC:        qrcode.js library
+  Production: Native QR libraries with hardware acceleration
+
+QR Scanning:
+  PoC:        ZXing.js library (browser camera access)
+  Production: Native camera APIs with ML Kit
+
+APIs:
+  PoC:        Fetch API for HTTPS communication
+  Production: Axios with retry logic and request queuing
+```
+
+</details>
+
+<details open>
+<summary><strong>⚙️ Backend Server</strong></summary>
+
+```
+Language: Python 3.10+
+
+Web Framework:
+  PoC:        Flask with Flask-RESTful
+  Production: FastAPI or Django with Gunicorn/uWSGI
+
+Database ORM: SQLAlchemy
+
+Database:
+  PoC:        SQLite
+  Production: PostgreSQL with read replicas and connection pooling
+
+Cryptography:
+  Classical:     Python cryptography library - RSA/ECDSA
+  Quantum-Safe:  IronCAP ICCHSM - Kyber, Dilithium, NIST-approved PQC algorithms
+  OpenSSL:       IronCAP ICC OpenSSL with hybrid classical+PQC cipher suites
+
+Background Jobs:
+  PoC:        APScheduler
+  Production: Celery with Redis/RabbitMQ message broker
+
+Admin Console:
+  PoC:        Flask-Admin or Streamlit
+  Production: Custom React dashboard with role-based access control
+
+iAM Smart Integration: OAuth 2.0 client library for government eID authentication
+API Documentation:     Swagger/OpenAPI for automated API documentation
+```
+
+</details>
+
+<details open>
+<summary><strong>☁️ Infrastructure</strong></summary>
+
+```
+Hosting:
+  PoC:        GCP Compute Engine Ubuntu VM (single instance)
+  Production: GCP Kubernetes Engine (GKE) or 
+              Alibaba Cloud Container Service for Kubernetes (ACK)
+              with auto-scaling and multi-region deployment
+
+Web Server:
+  NGINX (reverse proxy) with OpenSSL 3.x + OQS provider for quantum-safe TLS
+
+Load Balancer:
+  PoC:        Not required
+  Production: GCP Cloud Load Balancer or 
+              Alibaba Cloud Server Load Balancer (SLB)
+              with health checks and SSL offloading
+
+SSL/TLS:
+  Certificates: Let's Encrypt (auto-renewal)
+  Quantum-Safe:  IronCAP ICC OpenSSL
+
+HSM:
+  PoC:        IronCAP ICCHSM Cloud Platform
+  Production: Crypto4A HSM appliance with ICCHSM support
+              FIPS 140-3 Level 3 compliance
+              Deployable on GCP or Alibaba Cloud infrastructure
+
+Caching:
+  PoC:        Not implemented
+  Production: Redis Cluster (GCP Memorystore or Alibaba Cloud ApsaraDB for Redis)
+              for session management and API response caching
+
+CDN:
+  PoC:        Not implemented
+  Production: Cloudflare, GCP Cloud CDN, or Alibaba Cloud CDN
+              for static asset delivery
+
+Monitoring:
+  PoC:        Basic GCP monitoring + application logging
+  Production: Prometheus + Grafana for metrics
+              ELK Stack (Elasticsearch, Logstash, Kibana) for centralized logging
+              Sentry for error tracking
+              Deployable on GCP Cloud Monitoring or Alibaba Cloud ARMS
+              (Application Real-Time Monitoring Service)
+```
+
+</details>
 ---
 
 ## Demo Limitations & Production Considerations
@@ -582,6 +664,7 @@ This functional prototype successfully demonstrates the complete access control 
 Real Matter Technology Limited  
 Copyright 2025-2026 <br>
 www.realmatter.io
+
 
 
 
