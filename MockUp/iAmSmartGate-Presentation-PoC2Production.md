@@ -64,7 +64,7 @@ The **iAM Smart Public Access Gate System (iAmSmartGate)** is a functional demon
 
 ## Mockup Demonstration
 
-Check out the [video](https://youtu.be/zs8cLBPwwbk) for the mockup demonstration.
+Watch the [mockup demo video](https://youtu.be/zs8cLBPwwbk).
 
 ---
 
@@ -677,6 +677,7 @@ This functional prototype successfully demonstrates the complete access control 
 Real Matter Technology Limited  
 Copyright 2025-2026 <br>
 www.realmatter.io
+
 
 
 
