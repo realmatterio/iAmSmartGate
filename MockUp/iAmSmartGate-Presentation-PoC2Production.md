@@ -15,7 +15,7 @@ The **iAM Smart Public Access Gate System (iAmSmartGate)** is a functional demon
 ![AccessControl](./Resources/AccessControlIroncap.jpg)
 
 - **Easy Public Access with Quantum-Secure Closed-Loop Control**: Seamless public visitor experience with multi-layer security verification to ensure controlled access
-- **User-Friendly for All Stakeholders**: Intuitive mobile wallet for public visitors; simple approval workflow for access control guards and administrators
+- **Mobile-Friendly for All Stakeholders**: Intuitive mobile wallet for public visitors; simple approval workflow for access control guards and administrators
 - **Government-Grade Authentication**: Leverages Hong Kong's iAM Smart government identity verification with official eID integration
 - **Add-On to Existing Systems**: Works alongside any existing closed-loop access control infrastructure without requiring modifications—it enhances rather than replaces
 
@@ -677,6 +677,7 @@ This functional prototype successfully demonstrates the complete access control 
 Real Matter Technology Limited  
 Copyright 2025-2026 <br>
 www.realmatter.io
+
 
 
 
