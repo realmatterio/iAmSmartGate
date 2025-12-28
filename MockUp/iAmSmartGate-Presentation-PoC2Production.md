@@ -18,6 +18,12 @@ The **iAM Smart Public Access Gate System (iAmSmartGate)** is a functional demon
 - **Government-Grade Authentication**: Leverages Hong Kong's iAM Smart government identity verification with official eID integration
 - **Add-On to Existing Systems**: Works alongside any existing closed-loop access control infrastructure without requiring modifications—it enhances rather than replaces
 
+### Pain Points: Modernizing Visitor Access, Security, and Quantum Readiness
+
+- Old badge systems don’t handle visitors well: there’s no **built-in public visitor flow or link to iAM Smart eID**, so approvals and revocations are slow and manual.
+- Static QR codes or tickets can be copied: we need **signed, one-time, short-lived codes** that the server checks before use.
+- **Today’s encryption could break** in a quantum future: we need quantum-safe crypto (Kyber/Dilithium), keys kept in an HSM, and quantum-safe TLS to stay secure.
+
 ### Closed-Loop Security
 
 ![ClosedLoopSecurity](./Resources/ClosedLoopSignature.jpg)
@@ -664,6 +670,7 @@ This functional prototype successfully demonstrates the complete access control 
 Real Matter Technology Limited  
 Copyright 2025-2026 <br>
 www.realmatter.io
+
 
 
 
