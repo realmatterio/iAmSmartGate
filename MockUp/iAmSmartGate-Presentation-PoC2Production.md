@@ -20,7 +20,7 @@ The **iAM Smart Public Access Gate System (iAmSmartGate)** is a functional demon
 
 ### Closed-Loop Security
 
-![ClosedLoopSecurity](./Resources/ClosedLoopSecurity.jpg)
+![ClosedLoopSecurity](./Resources/ClosedLoopSignature.jpg)
 
 - **Quantum-Safe Security**: Digital signatures on access passes and QR codes stored in a secure wallet architecture; extensible to post-quantum cryptography (PQC) algorithms
 - **Real-Time Access Control**: Gate readers validate passes instantly with signature verification, single-use enforcement and closed-loop transaction guarantees
@@ -664,6 +664,7 @@ This functional prototype successfully demonstrates the complete access control 
 Real Matter Technology Limited  
 Copyright 2025-2026 <br>
 www.realmatter.io
+
 
 
 
