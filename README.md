@@ -1,1 +1,1 @@
-[![Open iAmSmartGate site](images/screenshot.png)](https://realmatterio.github.io/iAmSmartGate/)
+[![Open iAmSmartGate site](realmatterio.github.io_iAmSmartGate.png)](https://realmatterio.github.io/iAmSmartGate/)
